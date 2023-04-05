@@ -21,7 +21,7 @@ def scalpliki(lista: list, nowy: str):
 
 
 # zadanie 3
-def nnajwartosci(lista: list, n: int, najwieksze=True):
+def nnajwartosci(lista: list, n: int, najwieksze= True):
     for i in lista:
         if str(i).isnumeric() != True:
             lista.remove(i)
@@ -32,14 +32,11 @@ def nnajwartosci(lista: list, n: int, najwieksze=True):
     else:
         return lista[:n]
 
-
-print(nnajwartosci(["x", 2, 1, 3, 7, 8, 4, -1, 6, 2], 3))
-print(nnajwartosci(["y", 2, 1, 3, 7, 8, 4, -1], 3, False))
+print(nnajwartosci(["x",2,1,3,7,8,4,-1,6,2],3))
+print(nnajwartosci(["y",2,1,3,7,8,4,-1],3,False))
 # zadanie4
-
-
 def zad4(lista: list):
-    slownik = {"int": [], "str": [], "float": []}
+    slownik = {"int":[], "str":[], "float":[]}
     for item in lista:
         if str(type(item)) == "<class 'int'>":
             slownik["int"].append(item)
