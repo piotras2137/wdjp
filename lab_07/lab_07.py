@@ -1,5 +1,4 @@
-from typing import Any
-
+from typing import Any, List, Union
 # zadanie 1. 
 def extract_numbers(vals: list[Any]) -> list[int | float]:
     return list(filter(lambda x: (isinstance(x, int) or isinstance(x, float)) and not isinstance(x, bool), vals))
@@ -12,7 +11,13 @@ lista = x.split(" ")
 print(list(sorted(lista, key=lambda x: len(x))))
 
 # zadanie 3 
+def sort_mixed_list(lst: List[Union[int, str]], reversed: bool = True) -> List[Union[int, str]]:
+    sorted_lst = sorted(lst, key=lambda x: (isinstance(x, str), x), reverse=reversed)
+    return sorted_lst
 
+lst1 = [12, "abc", "acb", 14, "cbd"]
+sorted_lst1 = sort_mixed_list(lst1)
+print(sorted_lst1)
 
 # zadanie 5
 def foo(vals: dict[str, list[int]], func) -> dict[str, list[int]]: 
